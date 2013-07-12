@@ -25,6 +25,7 @@ platform :ruby do
   gem 'unicorn'
   gem 'newrelic_rpm' 
   gem 'ey_config'
+  gem 'td', "~> 0.10.22"
 end
 
 platforms :jruby do
