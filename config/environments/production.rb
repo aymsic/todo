@@ -64,6 +64,20 @@ Listr::Application.configure do
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
+    
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.default_charset = "utf-8"
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.smtp_settings = {
+        :authentication => :plain,
+        :address => "smtp.sendgrid.net",
+        :port => 587,
+        :domain => "yourdomain.com",
+        :user_name => EY::Config.get(:sendgrid, 'ey_account_11951@engineyard.com'),
+        :password => EY::Config.get(:sendgrid, 'Your Password')
+    }
+    
 end
 
  
