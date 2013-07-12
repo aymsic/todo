@@ -78,6 +78,18 @@ Listr::Application.configure do
         :password => EY::Config.get(:sendgrid, 'SENDGRID_PASSWORD')
     }
     
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.smtp_settings = {
+        :authentication => :plain,
+        :address => "smtp.mailgun.org",
+        :port => 587,
+        :domain => EY::Config.get(:mailgun, 'MAILGUN_DOMAIN'),
+        :user_name => EY::Config.get(:mailgun, 'MAILGUN_SMTP_USER'),
+        :password => EY::Config.get(:mailgun, 'MAILGUN_SMTP_PASSWORD')
+    }
+    
 end
 
  
