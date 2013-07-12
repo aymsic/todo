@@ -73,6 +73,7 @@ Listr::Application.configure do
         :authentication => :plain,
         :address => "smtp.sendgrid.net",
         :port => 587,
+        :domain => "http://ec2-54-235-194-198.compute-1.amazonaws.com"
         :user_name => EY::Config.get(:sendgrid, 'ey_account_11951@engineyard.com'),
         :password => EY::Config.get(:sendgrid, 'Your Password')
     }
