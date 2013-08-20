@@ -1,9 +1,13 @@
+
+---
 defaults:
   copy_exclude:
   - .git
   precompile_assets: true
-
+  migrate: true
+  migration_command: rake db:migrate
 environments:
   production:
-   copy_exclude:
-   - .git
+    copy_exclude:
+    - .git
+  Woooh: {}
